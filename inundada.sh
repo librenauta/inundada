@@ -19,12 +19,31 @@ OUTPUTDIR=$(date +%d-%m-%y-$RANDOM)
 # Comentario del torrent al crearse
 COMENTARIO="Compartir es bueno"
 # Lista de trackers, separadas por espacios, OPENTRACKETS :D
-TRACKERS="udp://tracker.opentrackr.org:1337/announce udp://glotorrents.pw:6969/announce"
+TRACKERS="http://9.rarbg.com:2710/announce
+http://announce.torrentsmd.com:6969/announce
+http://bt.careland.com.cn:6969/announce
+http://explodie.org:6969/announce
+http://mgtracker.org:2710/announce
+http://tracker.best-torrents.net:6969/announce
+http://tracker.tfile.me/announce
+http://tracker.torrenty.org:6969/announce
+http://tracker1.wasabii.com.tw:6969/announce
+udp://9.rarbg.com:2710/announce
+udp://9.rarbg.me:2710/announce
+udp://coppersurfer.tk:6969/announce
+udp://exodus.desync.com:6969/announce
+udp://open.demonii.com:1337/announce
+udp://tracker.btzoo.eu:80/announce
+udp://tracker.istole.it:80/announce
+udp://tracker.openbittorrent.com:80/announce
+udp://tracker.prq.to/announce
+udp://tracker.publicbt.com:80/announce"
 
 
 
-
-TRACKERSLIST=$(echo "${TRACKERS}" | sed  -e "s/ / -t /")
+#Cambio los principios de linea por "-t", quito los saltos de linea, y el pimer
+# "-t" asi lo pongo en las opciones de transmission-create
+TRACKERSLIST=$(echo "${TRACKERS}" | sed  -e "s/^/ -t /g" | tr "\n" " " | sed -e "s/\-t//")
 
 mkdir ${OUTPUTDIR}
 # Array con los directorios, quitamos el primer diectorio que es el base
