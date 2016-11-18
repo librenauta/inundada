@@ -48,3 +48,4 @@ tree  12-11-16-31298/
 
 
 Vamos a crear un .torrent por cada carpeta
+y un .txt con los nombres de las carpetas + la urn (magnet)
