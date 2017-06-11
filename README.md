@@ -2,8 +2,8 @@ Inundado
 --------
 
 Inundado es un script muy simple en bash que recibe una ruta como parametro y
-crea un archivo torrent por cada directorioque cuentra y tambien un listado de
-magnetlinks.
+crea un archivo torrent por cada directorio que cuenta y tambien un listado de
+magnetlinks a partir de los .torrents creados
 
 Ej:
 tree /tmp/inundado
